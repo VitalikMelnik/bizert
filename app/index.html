@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Test app</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/controllers/root.js"></script>
+    <script src="js/controllers/house_1.js"></script>
+    <script src="js/controllers/house_2.js"></script>
+    <script src="js/controllers/house_3.js"></script>
+    <script src="js/controllers/house_4.js"></script>
+    <script src="js/controllers/modal.js"></script>
+</head>
+    <body ng-controller="rootController">
+
+        <div class="navbar-wrapper">
+            <div class="container">
+                <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+                    <div class="container">
+                        <div class="navbar-header">
+                                <button id="but" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand" href="#"><img src="img/logo.png"></a>
+                        </div>
+                        <div class="glyphicon-align-center">
+                           <div id="navbar" class=" navbar-collapse collapse">
+                               <ul class="nav navbar-nav  ">
+                                   <li><a id="a" href="#">Главная</a></li>
+                                   <li><a id="a1" href="#">Проекты</a></li>
+                                   <li><a id="a2" href="#">Наши работы</a></li>
+                                   <li><a id="a3" href="#">Контакты</a></li>
+                               </ul>
+                           </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div id="photo-content" class="navbar-collapse collapse">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner" >
+                    <div class=" item active">
+                                <div id="header">
+                                    <img id="img" src="img/header.jpg" alt="Photo">
+                                </div>
+                            <div class="container">
+                                <div class="col-sm-12 col-md-12 col-lg-12" id="info">Есть вопроси?Звоните!<br>
+                                    +7(8452)44-85-25<br>
+                                    Ежедневно:9:00-19:00
+                                </div>
+                                <h1 class="text-center col-sm-12 col-md-12 col-lg-12">Построим Каркасний дом под Ключ</h1>
+                                <h2 class="text-center col-sm-12 col-md-12 col-lg-12">За 14 дней от 8 100 рублей за кв.метр</h2>
+
+                                            <div class="col-sm-12 col-md-12 col-lg-12" id="form" >
+                                                <p class="text-center">Заполните заявку, и мы перезвоним<br>
+                                                    чтобы проконсультировать Вас по<br>
+                                                    строительству дома
+                                                </p>
+                                                <form name="userForm" novalidate>
+                                                    <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+
+                                                        <input  class="form-control" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" ng-model="task.email" required><br>
+                                                        <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
+                                                    </div>
+
+                                                    <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }" id="message">
+
+                                                        <input id="text" ng-model="task.message"  class="form-control" ng-minlength="10" name="name" required><br>
+                                                        <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">Enter more than 10 characters.</p>
+                                                    </div>
+
+                                                    <div class="alert alert-success" ng-show="goCats" id="but_ok">
+                                                        <strong>Success!</strong> Your message has been sent.<br>
+                                                        <a href ng-click="goCats = !goCats" class="btn btn-primary btn-sm" >OK</a>
+                                                    </div>
+
+                                                    <input class="btn btn-lg btn-warning" type="submit" ng-click="submitForm()" >
+
+                                                </form>
+
+
+
+                                            </div>
+
+                            </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+
+        <div class="container" id="bod">
+
+                <div class="row row-offcanvas row-offcanvas-right">
+
+                    <div class="row">
+                        <div class="container col-xs-12 col-sm-6 col-md-4 col-lg-4 group">
+                            <img src="img/1.jpg" alt="photo" class="center-block">
+                            <p class="text-center">Lorem ipsum dolor sit amet,<br> consectetur adipisicing elit...</p>
+                        </div>
+                        <div class="container col-xs-12 col-sm-6 col-md-4 col-lg-4 group " >
+                            <img src="img/2.jpg" alt="photo" class="center-block">
+                            <p class="text-center">Lorem ipsum dolor sit amet,<br> consectetur adipisicing elit...</p>
+                        </div>
+                        <div class="container col-xs-12 col-sm-6 col-md-4 col-lg-4 group">
+                            <img src="img/3.jpg" alt="photo" class="center-block">
+                            <p class="text-center">Lorem ipsum dolor sit amet,<br> consectetur adipisicing elit...</p>
+                        </div>
+                        <div class=" container col-xs-12 col-sm-6 col-md-4 col-lg-4 group">
+                            <img src="img/4.jpg" alt="photo" class="center-block">
+                            <p class="text-center">Lorem ipsum dolor sit amet,<br> consectetur adipisicing elit...</p>
+
+                        </div>
+                        <div class="container col-xs-12 col-sm-6 col-md-4 col-lg-4 group" >
+                            <img src="img/5.jpg" alt="photo" class="center-block">
+                            <p class="text-center">Lorem ipsum dolor sit amet,<br> consectetur adipisicing elit...</p>
+
+                        </div>
+                        <div class="container col-xs-12 col-sm-6 col-md-4 col-lg-4 group">
+                            <img src="img/6.jpg" alt="photo" class="center-block">
+                            <p class="text-center">Lorem ipsum dolor sit amet,<br> consectetur adipisicing elit...</p>
+
+                        </div>
+                    </div>
+
+            <div class="container">
+
+                <div id="navigation" class="btn-group btn-group-justified">
+                    <a href="#/house_1" class="btn btn-primary">dacha red</a>
+                    <a href="#/house_2" class="btn btn-primary">dacha brus </a>
+                    <a href="#/house_3" class="btn btn-primary">cotedg red</a>
+                    <a href="#/house_4" class="btn btn-primary">cotedg brus</a>
+                </div>
+
+            <div ng-view class="container-fluid text-center bg-grey"></div>
+            </div>
+    </div>
+                </div>
+
+    </body>
+</html>
